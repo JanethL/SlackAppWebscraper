@@ -1,0 +1,20 @@
+{
+  "name": "JanethL/Slackappcrawler",
+  "version": "0.0.0",
+  "timeout": 10000,
+  "connector": false,
+  "events": {
+    "functions/events/slack/command/scrape.js": {
+      "name": "slack.command",
+      "subtype": {
+        "command": "scrape"
+      }
+    },
+    "functions/events/slack/command/list.js": {
+      "name": "slack.command",
+      "subtype": {
+        "command": "list"
+      }
+    }
+  }
+}
