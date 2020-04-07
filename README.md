@@ -93,7 +93,9 @@ Line 18-21 makes an HTTP GET request to the lib.slack.conversations[‘@0.2.5’
 
 Line 22-25 also makes an HTTP GET request to lib.slack.users[‘@0.3.32’] and uses theretrieve method to get the user object which has info about the user and stores it in result.slack.user.
 
-Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked. For the `url` we want to crawl we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
+Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked.
+
+For the `url` we want to crawl we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
 
 `userAgent` is set to the default: `stdlib/crawler/query` 
 
@@ -104,11 +106,12 @@ Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and pass
 For `selector` we retrieve the second input from the Slack event using `event.text.split(/\s+/)[1]`.  
 
 Lines 40–53 creates and posts your message using the information (parameters) that are passed in: channelId, Text.
+
 You can read more about API specifications and parameters here: https://docs.stdlib.com/connector-apis/building-an-api/api-specification/
 
 # Installation
 
-Click this deploy from Autocode button  To quickly set up your project on Autocode.
+Click this deploy from Autocode button to quickly set up your project on Autocode.
 
 [<img src="https://deploy.stdlib.com/static/images/deploy.svg?" width="192">](https://deploy.stdlib.com/)
 
