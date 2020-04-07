@@ -57,25 +57,24 @@ In this tutorial, we will learn to retrieve and send our scraped data into Slack
 33.          {
 34.               'selector': event.text.split(/\s+/)[1],
 35.               'resolver': `attr`,
-36.               'attr': event.text.split(/\s+/)[2]
+36.               `attr`: `href`
 37.           }
 38.       ]
 39.   });
-40.   let text = `Here are the links that we found for ${event.text.split(/\s+/)[0]}\n \n
-41.   ${result.crawler.pageData.queryResults[0].map((r) => {
-42.     if (r.attr.startsWith('http://') || r.attr.startsWith('https://') || r.attr.startsWith('//')) {
-43.         return r.attr;
-44.     } else {
-45.         return result.crawler.pageData.url + r.attr;
-46.     }
-47.   }).join(' \n ')}`;
-48.   console.log(`Running [Slack → Send a Message from your Bot to a Channel]...`);
-49.   result.slack.response = await lib.slack.channels['@0.6.6'].messages.create({
-50.     channel: `#${event.channel_id}`,
-51.     text: text
-52.   })
-53.   return result;
-54. };
+40.   let text = `Here are the links that we found for ${event.text.split(/\s+/)[0]}\n \n ${result.crawler.pageData.queryResults[0].map((r) => {
+41.     if (r.attr.startsWith('http://') || r.attr.startsWith('https://') || r.attr.startsWith('//')) {
+42.         return r.attr;
+43.     } else {
+44.         return result.crawler.pageData.url + r.attr;
+45.     }
+46.   }).join(' \n ')}`;
+47.   console.log(`Running [Slack → Send a Message from your Bot to a Channel]...`);
+48.   result.slack.response = await lib.slack.channels['@0.6.6'].messages.create({
+49.     channel: `#${event.channel_id}`,
+50.     text: text
+51.   })
+52.   return result;
+53. };
 
 
 ``` 
