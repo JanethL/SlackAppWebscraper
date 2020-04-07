@@ -14,11 +14,73 @@ In this guide, we will learn to retrieve and send our scraped data into Slack. W
 1. [How It Works](#how-it-works)
 1. [Installation](#installation)
 1. [Test Your Workflow](#test-your-workflow)
+1. [How It Works](#how-it-works) 
 1. [Making Changes](#making-changes)
    1. [via Web Browser](#via-web-browser)
    1. [via Command Line](#via-command-line)
 1. [Support](#support)
 1. [Acknowledgements](#acknowledgements)
+
+
+# Installation
+
+Click this deploy from Autocode button to quickly set up your project on Autocode.
+
+[<img src="https://deploy.stdlib.com/static/images/deploy.svg?" width="192">](https://deploy.stdlib.com/)
+
+You will be prompted to sign in or create a **FREE** account. If you have a Standard Library account click **Already Registered** and sign in using your Standard Library credentials.
+
+Give your project a unique name and select **Start API Project from Github** 
+
+<img src= "./images/Name.png" width="400">
+
+Autocode automatically sets up a project scaffold to save your project as an API endpoint, but it hasn’t been deployed.
+
+<img src= "./images/Navigate.png" width="400">
+
+To deploy your API to the cloud navigate through `functions/events/slack/command/` folders and select `scrape.js` file. 
+
+<img src= "./images/DeveloperMode.png" width="400">
+
+Select the **1 Account Required** red button which will prompt you to link a Slack account.
+
+<img src= "./images/link.png" width="400">
+
+If you’ve built Slack apps with Standard Library, you’ll see existing Slack accounts, or you can select **Link New Resource** to link a new Slack app.
+
+<img src= "./images/LinkNew.png" width="400">
+
+Select **Install Standard Library App**.
+
+<img src= "./images/StandardApp.png" width="400">
+
+You should see an OAuth popup that looks sonething like this:
+
+<img src= "./images/Oauth.png" width="400">
+
+Select **Allow**. You'll have the option to customize your Slack app with a name and image.
+
+<img src= "./images/custom.png" width="400">
+
+Select **Finish**. The green checkmarks confirm that you’ve linked your accounts correctly. Click **Finished Linking.**
+
+<img src= "./images/linked.png" width="400">
+
+To deploy your API to the cloud select **Deploy API** in the bottom-left of the file manager.
+
+<img src= "./images/deploy.png" width="400">
+
+# Test Your Workflow 
+
+You’re all done. Try it out! Your Slack App is now available for use in the Slack workspace you authorized it for. Your Slack app should respond to a `/cmd scrape <url> <selector>` as I show in the screenshot:
+
+<img src= "./images/SlackAppCrawlerSample.png" width="450">
+
+I've included an additional command that lists a few websites and their selectors to retrieve links. 
+
+Just type `/cmd list` and you should see your app respond with the following message: 
+
+<img src= "./images/list2.png" width="450">
 
 # How It Works
 
@@ -111,65 +173,6 @@ The first line of code imports an NPM package called “lib” to allow us to co
 
 You can read more about API specifications and parameters here: https://docs.stdlib.com/connector-apis/building-an-api/api-specification/
 
-# Installation
-
-Click this deploy from Autocode button to quickly set up your project on Autocode.
-
-[<img src="https://deploy.stdlib.com/static/images/deploy.svg?" width="192">](https://deploy.stdlib.com/)
-
-You will be prompted to sign in or create a **FREE** account. If you have a Standard Library account click **Already Registered** and sign in using your Standard Library credentials.
-
-Give your project a unique name and select **Start API Project from Github** 
-
-<img src= "./images/Name.png" width="400">
-
-Autocode automatically sets up a project scaffold to save your project as an API endpoint, but it hasn’t been deployed.
-
-<img src= "./images/Navigate.png" width="400">
-
-To deploy your API to the cloud navigate through `functions/events/slack/command/` folders and select `scrape.js` file. 
-
-<img src= "./images/DeveloperMode.png" width="400">
-
-Select the **1 Account Required** red button which will prompt you to link a Slack account.
-
-<img src= "./images/link.png" width="400">
-
-If you’ve built Slack apps with Standard Library, you’ll see existing Slack accounts, or you can select **Link New Resource** to link a new Slack app.
-
-<img src= "./images/LinkNew.png" width="400">
-
-Select **Install Standard Library App**.
-
-<img src= "./images/StandardApp.png" width="400">
-
-You should see an OAuth popup that looks sonething like this:
-
-<img src= "./images/Oauth.png" width="400">
-
-Select **Allow**. You'll have the option to customize your Slack app with a name and image.
-
-<img src= "./images/custom.png" width="400">
-
-Select **Finish**. The green checkmarks confirm that you’ve linked your accounts correctly. Click **Finished Linking.**
-
-<img src= "./images/linked.png" width="400">
-
-To deploy your API to the cloud select **Deploy API** in the bottom-left of the file manager.
-
-<img src= "./images/deploy.png" width="400">
-
-# Test Your Workflow 
-
-You’re all done. Try it out! Your Slack App is now available for use in the Slack workspace you authorized it for. Your Slack app should respond to a `/cmd scrape <url> <selector>` as I show in the screenshot:
-
-<img src= "./images/SlackAppCrawlerSample.png" width="450">
-
-I've included an additional command that lists a few websites and their selectors to retrieve links. 
-
-Just type `/cmd list` and you should see your app respond with the following message: 
-
-<img src= "./images/list2.png" width="450">
 
 # Making Changes
 
