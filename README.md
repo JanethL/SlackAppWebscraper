@@ -7,7 +7,7 @@ In the [last tutorial](https://github.com/JanethL/WebScraper), we learned how to
 
 In this guide, we will learn to retrieve and send our scraped data into Slack. We'll set up a Slack app that scrapes websites for links using a Slack slash command and posts the results inside a Slack channel like this:
 
-<img src= "./images/SlackAppCrawlerSample.png" width="450">
+<img src= "./images/Example.png" width="450">
 
 # Table of Contents
 
@@ -73,13 +73,13 @@ To deploy your API to the cloud select **Deploy API** in the bottom-left of the 
 
 You’re all done. Try it out! Your Slack App is now available for use in the Slack workspace you authorized it for. Your Slack app should respond to a `/cmd scrape <url> <selector>` as I show in the screenshot:
 
-<img src= "./images/SlackAppCrawlerSample.png" width="450">
+<img src= "./images/Example.png" width="450">
 
 I've included an additional command that lists a few websites and their selectors to retrieve links. 
 
 Just type `/cmd list` and you should see your app respond with the following message: 
 
-<img src= "./images/list2.png" width="450">
+<img src= "./images/listexample.png" width="450">
 
 # How It Works
 
