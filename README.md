@@ -11,7 +11,6 @@ In this guide, we will learn to retrieve and send our scraped data into Slack. W
 
 # Table of Contents
 
-1. [How It Works](#how-it-works)
 1. [Installation](#installation)
 1. [Test Your Workflow](#test-your-workflow)
 1. [How It Works](#how-it-works) 
