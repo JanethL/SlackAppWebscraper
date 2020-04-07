@@ -8,7 +8,7 @@ module.exports = async (event) => {
   // Store API Responses
   const result = {slack: {}, crawler: {}};
   
-  if ((event.text || '').split(/\s+/).length != 3) {
+  if ((event.text || '').split(/\s+/).length != 2) {
     return lib.slack.channels['@0.6.6'].messages.create({
       channel: `#${event.channel_id}`,
       text: `${event.text} has wrong format. `
@@ -33,7 +33,7 @@ module.exports = async (event) => {
           {
               'selector': event.text.split(/\s+/)[1],
               'resolver': `attr`,
-              'attr': event.text.split(/\s+/)[2]
+              'attr': 'href'
           }
       ]
   });
