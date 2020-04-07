@@ -22,7 +22,7 @@ In this guide, we will learn to retrieve and send our scraped data into Slack. W
 
 # How It Works
 
-When you submit `/cmd scrape https://techcrunch.com/ a.post-block__title__link` (or any url and it's repective selector) in Slack’s message box, a webhook will be triggered. The webhook, built and hosted on [Standard Library](stdlib.com), will first make a request to [crawler.api](https://stdlib.com/@crawler/lib/query), which will return a JSON payload with results from the query. 
+When you submit `/cmd scrape https://techcrunch.com/ a.post-block__title__link` (or any url followed by it's repective selector) in Slack’s message box, a webhook will be triggered. The webhook, built and hosted on [Standard Library](stdlib.com), will first make a request to [crawler.api](https://stdlib.com/@crawler/lib/query), which will return a JSON payload with results from the query. 
 
 Our webhook will then create Slack messages for each event and post those to the channel where the command was invoked.
 
@@ -86,29 +86,28 @@ The first line of code imports an NPM package called “lib” to allow us to co
 
 `const lib = require(‘lib’)({token: process.env.STDLIB_SECRET_TOKEN});` 
 
-Line 2–6 is a comment that serves as documentation and allows Standard Library to type check calls to our functions. If a call does not supply a parameter with a correct (or expected type) it would return an error.
+**Line 2–6** is a comment that serves as documentation and allows Standard Library to type check calls to our functions. If a call does not supply a parameter with a correct (or expected type) it would return an error.
 
-Line 7 is a function (module.exports) that will export our entire code found in lines 8–54. Once we deploy our code, this function will be wrapped into an HTTP endpoint (API endpoint) and it’ll automatically register with Slack so that every time a Slack command event happens, Slack will send the event payload for our API endpoint to consume.
+**Line 7** is a function (module.exports) that will export our entire code found in lines 8–54. Once we deploy our code, this function will be wrapped into an HTTP endpoint (API endpoint) and it’ll automatically register with Slack so that every time a Slack command event happens, Slack will send the event payload for our API endpoint to consume.
 
-Line 11-16 is an if statement that handles improper inputs and posts a message to Slack using lib.slack.channels['@0.6.6'].messages.create. 
+**Line 11-16** is an if statement that handles improper inputs and posts a message to Slack using lib.slack.channels['@0.6.6'].messages.create. 
 
-Line 18-21 makes an HTTP GET request to the lib.slack.conversations[‘@0.2.5’] API and uses the info method to retrieve the channel object which has info about the channel including name, topic, purpose etc and stores it in result.slack.channel.
+**Line 18-21** makes an HTTP GET request to the lib.slack.conversations[‘@0.2.5’] API and uses the info method to retrieve the channel object which has info about the channel including name, topic, purpose etc and stores it in result.slack.channel.
 
-Line 22-25 also makes an HTTP GET request to lib.slack.users[‘@0.3.32’] and uses the retrieve method to get the user object which has info about the user and stores it in result.slack.user.
+**Line 22-25** also makes an HTTP GET request to lib.slack.users[‘@0.3.32’] and uses the retrieve method to get the user object which has info about the user and stores it in result.slack.user.
 
-Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked.
+**Line 27-39** is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked. 
+   For the `url` we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
 
-For the `url` we want to crawl we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
+   `userAgent` is set to the default: `stdlib/crawler/query` 
 
-`userAgent` is set to the default: `stdlib/crawler/query` 
+   `includeMetadata` is `False` (if True, will return additional metadata in a meta field in the response)
 
-`includeMetadata` is `False` (if True, will return additional metadata in a meta field in the response)
+   `selectorQueries` is an array with one object, the values being {`selector`:`event.text.split(/\s+/)[1]`,`resolver':'attr`,    `attr`: `href`}
 
-`selectorQueries` is an array with one object, the values being {`selector`:`event.text.split(/\s+/)[1]`,`resolver':'attr`, `attr`: `href`}
+   For `selector` we retrieve the second input from the Slack event using `event.text.split(/\s+/)[1]`.  
 
-For `selector` we retrieve the second input from the Slack event using `event.text.split(/\s+/)[1]`.  
-
-Lines 40–53 creates and posts your message using the information (parameters) that is passed in: channelId, Text.
+**Lines 40–53** creates and posts your message using the parameters that are passed in: channelId, Text.
 
 You can read more about API specifications and parameters here: https://docs.stdlib.com/connector-apis/building-an-api/api-specification/
 
@@ -211,7 +210,7 @@ find your project and select it.
 
 From the environment management screen, simply click **Ship Release**.
 
-<img src="https://cdn-images-1.medium.com/max/1440/1*JqiwC6a_zbIdTsww1BOYLQ.png" width="400">
+<img src=" " width="400">
 
 Link any necessary resources, specify the version of the release and click **Create Release** to proceed. 
 
