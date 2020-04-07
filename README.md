@@ -173,9 +173,7 @@ Just type `/cmd list` and you should see your app respond with the following mes
 
 # Making Changes
 
-Now that your app is live, you can return and add additional logic and scrape other attributes with [crawler.api](https://stdlib.com/@crawler/lib/query) 
-  
-# Making Changes
+Now that your app is live, you can return at any time to add additional logic and scrape websites for data with [crawler.api](https://stdlib.com/@crawler/lib/query).
 
 There are two ways to modify your application. The first is via our in-browser
 editor, [Autocode](https://autocode.com/). The second is
