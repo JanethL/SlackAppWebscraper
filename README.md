@@ -61,7 +61,7 @@ In this tutorial, we will learn to retrieve and send our scraped data into Slack
 38.       ]
 39.   });
 40.   let text = `Here are the links that we found for ${event.text.split(/\s+/)[0]}\n \n
-41.  ${result.crawler.pageData.queryResults[0].map((r) => {
+41.   ${result.crawler.pageData.queryResults[0].map((r) => {
 42.     if (r.attr.startsWith('http://') || r.attr.startsWith('https://') || r.attr.startsWith('//')) {
 43.         return r.attr;
 44.     } else {
@@ -86,15 +86,22 @@ Line 2–6 is a comment that serves as documentation and allows Standard Library
 
 Line 7 is a function (module.exports) that will export our entire code found in lines 8–54. Once we deploy our code, this function will be wrapped into an HTTP endpoint (API endpoint) and it’ll automatically register with Slack so that every time a Slack command event happens, Slack will send the event payload for our API endpoint to consume.
 
-Line 11-16 is an if statement handling improper inputs. 
+Line 11-16 is an if statement that handles improper inputs and posts a message to Slack using 
+lib.slack.channels['@0.6.6'].messages.create. 
 
 Line 18-21 makes an HTTP GET request to the lib.slack.conversations[‘@0.2.5’] API and uses the info method to retrieve the channel object which has info about the channel including name, topic, purpose etc and stores it in result.slack.channel.
 
 Line 22-25 also makes an HTTP GET request to lib.slack.users[‘@0.3.32’] and uses theretrieve method to get the user object which has info about the user and stores it in result.slack.user.
 
-Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when an Slack command event is invoked. For `url`:`event.text.split(/\s+/)[0]`
+Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked. For the `url` we want to crawl we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
 
-Lines 24–32 creates and posts your message using the information (parameters) that are passed in: channelId, UserId, Text.
+`userAgent` is set to the default: `stdlib/crawler/query` 
+`includeMetadata` is `False` (if True, will return additional metadata in a meta field in the response)
+`selectorQueries` is an array with one object, the values being {`selector`:`event.text.split(/\s+/)[1]`,`resolver':'attr`, 'attr': 'href'}
+
+For `selector` we retrieve the second input from the Slack event using `event.text.split(/\s+/)[1]`.  
+
+Lines 40–53 creates and posts your message using the information (parameters) that are passed in: channelId, Text.
 You can read more about API specifications and parameters here: https://docs.stdlib.com/connector-apis/building-an-api/api-specification/
 
 # Installation
