@@ -21,6 +21,7 @@ In this tutorial, we will learn to retrieve and send our scraped data into Slack
 # How It Works
 
 ``` javascript 
+
 1. const lib = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
 2. /**
 3. * An HTTP endpoint that acts as a webhook for Slack command event
@@ -96,8 +97,10 @@ Line 22-25 also makes an HTTP GET request to lib.slack.users[‘@0.3.32’] and 
 Line 27-39 is making an HTTP GET request to lib.crawler.query['@0.0.1'] and passes in inputs from when a Slack command event is invoked. For the `url` we want to crawl we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
 
 `userAgent` is set to the default: `stdlib/crawler/query` 
+
 `includeMetadata` is `False` (if True, will return additional metadata in a meta field in the response)
-`selectorQueries` is an array with one object, the values being {`selector`:`event.text.split(/\s+/)[1]`,`resolver':'attr`, 'attr': 'href'}
+
+`selectorQueries` is an array with one object, the values being {`selector`:`event.text.split(/\s+/)[1]`,`resolver':'attr`, `attr`: `href`}
 
 For `selector` we retrieve the second input from the Slack event using `event.text.split(/\s+/)[1]`.  
 
