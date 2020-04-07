@@ -168,7 +168,7 @@ I've included an additional command that lists a few websites and their selector
 
 Just type `/cmd list` and you should see your app respond with the following message: 
 
-<img src= "./images/list.png" width="450">
+<img src= "./images/list2.png" width="450">
 
 # Making Changes
 
