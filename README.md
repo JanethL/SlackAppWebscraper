@@ -3,7 +3,7 @@
 
 # Slack app Website Scraper 
 
-In the [last tutorial](https://github.com/JanethL/WebScraper), we learned how to use [crawler.api](https://stdlib.com/@crawler/lib/query) on Standard Library to scrape websites using CSS selectors and as an example, we scraped the front page of The Economist for titles and their respective URLs. 
+In the [last tutorial](https://github.com/JanethL/WebScraper), we learned how to use [crawler.api](https://stdlib.com/@crawler/lib/query) on Standard Library to scrape websites using CSS selectors and as an example, we scraped the front page of [The Economist](https://www.economist.com/) for titles and their respective URLs. 
 
 In this guide, we will learn to retrieve and send our scraped data into Slack. We'll set up a Slack app that scrapes websites for links using a Slack slash command and posts the results inside a Slack channel like this:
 
@@ -125,9 +125,7 @@ Autocode automatically sets up a project scaffold to save your project as an API
 
 To deploy your API to the cloud navigate through `functions/events/slack/command/` folders and select `scrape.js` file. 
 
-
-<img src= "./images/developerMode.png" width="400">
-
+<img src= "./images/DeveloperMode.png" width="400">
 
 Select the **1 Account Required** red button which will prompt you to link a Slack account.
 
@@ -135,7 +133,7 @@ Select the **1 Account Required** red button which will prompt you to link a Sla
 
 If you’ve built Slack apps with Standard Library, you’ll see existing Slack accounts, or you can select **Link New Resource** to link a new Slack app.
 
-<img src= "./" width="400">
+<img src= "./LinkNew" width="400">
 
 Select **Install Standard Library App**.
 
