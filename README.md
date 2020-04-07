@@ -133,38 +133,30 @@ Select the **1 Account Required** red button which will prompt you to link a Sla
 
 If you’ve built Slack apps with Standard Library, you’ll see existing Slack accounts, or you can select **Link New Resource** to link a new Slack app.
 
-<img src= "./LinkNew" width="400">
+<img src= "./images/LinkNew.png" width="400">
 
 Select **Install Standard Library App**.
 
-<img src= "./" width="400">
+<img src= "./images/StandardApp.png" width="400">
 
-You should see an OAuth popup that looks like this:
+You should see an OAuth popup that looks sonething like this:
 
-<img src= "." width="400">
+<img src= "./images/Oauth.png" width="400">
 
-Select **Allow**. You’ll have the option to customize your Slack app with a name and image.
+Select **Allow**. You'll have the option to customize your Slack app with a name and image.
 
-<img src= "./" width="400">
+<img src= "./images/custom.png" width="400">
 
 Select **Finish**. The green checkmarks confirm that you’ve linked your accounts correctly. Click **Finished Linking.**
 
-<img src= "./" width="400">
+<img src= "./images/linked.png" width="400">
 
-Select the orange **Save Endpoint** button.
+To deploy your API to the cloud select **Deploy API** in the bottom-left of the file manager.
 
-<img src= "./" width="400">
-
-Give your project a name and **Save API Project**.
-
-Great! You’ve just saved your first project. Autocode automatically sets up a project scaffold to save your project as an API endpoint, but it hasn’t been deployed.
-
-This means your endpoints are not yet live and can’t respond to HTTP requests or events. To deploy your API to the cloud select **Deploy API** in the bottom-left of the file manager.
-
-<img src= "./" width="400">
+<img src= "./images/deploy.png" width="400">
 
 # Test Your Workflow 
 # Making Changes
-
+  
 # Support
 # Acknowledgements
