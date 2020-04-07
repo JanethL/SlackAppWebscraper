@@ -37,7 +37,7 @@ Autocode automatically sets up a project scaffold to save your project as an API
 
 <img src= "./images/Navigate.png" width="400">
 
-To deploy your API to the cloud navigate through `functions/events/slack/command/` folders and select `scrape.js` file. 
+To deploy your API to the cloud navigate through the `functions/events/slack/command/` folders and select `scrape.js` file. 
 
 <img src= "./images/DeveloperMode.png" width="400">
 
@@ -53,7 +53,7 @@ Select **Install Standard Library App**.
 
 <img src= "./images/StandardApp.png" width="400">
 
-You should see an OAuth popup that looks sonething like this:
+You should see an OAuth popup that looks something like this:
 
 <img src= "./images/Oauth.png" width="400">
 
@@ -151,13 +151,13 @@ The first line of code imports an NPM package called “lib” to allow us to co
 
 **Line 7** is a function (module.exports) that will export our entire code found in lines 8–54. Once we deploy our code, this function will be wrapped into an HTTP endpoint (API endpoint) and it’ll automatically register with Slack so that every time a Slack command event happens, Slack will send the event payload for our API endpoint to consume.
 
-**Line 11-16** is an if statement that handles improper inputs and posts a message to Slack using `lib.slack.channels['@0.6.6'].messages.create`. 
+**Lines 11-16** is an if statement that handles improper inputs and posts a message to Slack using `lib.slack.channels['@0.6.6'].messages.create`. 
 
-**Line 18-21** makes an HTTP GET request to the `lib.slack.conversations[‘@0.2.5’]` API and uses the info method to retrieve the channel object which has info about the channel including name, topic, purpose etc and stores it in result.slack.channel.
+**Lines 18-21** make an HTTP GET request to the `lib.slack.conversations[‘@0.2.5’]` API and uses the info method to retrieve the channel object which has info about the channel including name, topic, purpose etc and stores it in result.slack.channel.
 
-**Line 22-25** also makes an HTTP GET request to `lib.slack.users[‘@0.3.32’]` and uses the retrieve method to get the user object which has info about the user and stores it in result.slack.user.
+**Lines 22-25** also make an HTTP GET request to `lib.slack.users[‘@0.3.32’]` and uses the retrieve method to get the user object which has info about the user and stores it in result.slack.user.
 
-**Line 27-39** is making an HTTP GET request to `lib.crawler.query['@0.0.1']` and passes in inputs from when a Slack command event is invoked. 
+**Lines 27-39** is making an HTTP GET request to `lib.crawler.query['@0.0.1']` and passes in inputs from when a Slack command event is invoked. 
    For the `url` we pass in the first input from our Slack event `event.text.split(/\s+/)[0]`.
 
    `userAgent` is set to the default: `stdlib/crawler/query` 
