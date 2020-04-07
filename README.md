@@ -22,7 +22,7 @@ In this guide, we will learn to retrieve and send our scraped data into Slack. W
 
 # How It Works
 
-When you submit `/cmd scrape https://techcrunch.com/ a.post-block__title__link` (or any url followed by it's repective selector) in Slack’s message box, a webhook will be triggered. The webhook, built and hosted on [Standard Library](stdlib.com), will first make a request to [crawler.api](https://stdlib.com/@crawler/lib/query), which will return a JSON payload with results from the query. 
+When you submit `/cmd scrape https://techcrunch.com/ a.post-block__title__link` (or any URL followed by its respective selector)) in Slack’s message box, a webhook will be triggered. The webhook, built and hosted on [Standard Library](stdlib.com), will first make a request to [crawler.api](https://stdlib.com/@crawler/lib/query), which will return a JSON payload with results from the query. 
 
 Our webhook will then create Slack messages for each event and post those to the channel where the command was invoked.
 
