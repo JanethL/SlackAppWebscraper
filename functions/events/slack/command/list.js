@@ -24,7 +24,7 @@ module.exports = async (event) => {
   await lib.slack.channels['@0.6.6'].messages.create({
     channel: `#${event.channel_id}`,
     text:
-    ` Here is a list of websites with their respective selectors: \n\n \t/cmd scrape https://techcrunch.com  a.post-block__title__link href \n\n \t/cmd scrape https://www.economist.com/ a.headline-link href \n\n \t/cmd scrape https://markets.businessinsider.com  a.teaser-headline href \n\n \t/cmd scrape https://news.ycombinator.com  a.storylink href \n\n \t/cmd scrape https://www.nytimes.com a href \n\n \t/cmd scrape https://www.cnn.com  a href \n\n \t/cmd scrape https://www.bbc.com a.media__link href`
+    ` Here is a list of websites with their respective selectors: \n\n \t/cmd scrape https://techcrunch.com  a.post-block__title__link \n\n \t/cmd scrape https://www.economist.com/ a.headline-link href \n\n \t/cmd scrape https://markets.businessinsider.com  a.teaser-headline href \n\n \t/cmd scrape https://news.ycombinator.com  a.storylink href \n\n \t/cmd scrape https://www.nytimes.com a href \n\n \t/cmd scrape https://www.cnn.com  a href \n\n \t/cmd scrape https://www.bbc.com a.media__link href`
       });
     
 
