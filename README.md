@@ -22,6 +22,10 @@ In this guide, we will learn to retrieve and send our scraped data into Slack. W
 
 # How It Works
 
+When you submit `/cmd scrape https://techcrunch.com/ a.post-block__title__link` (or any url and it's repective selector) in Slack’s message box, a webhook will be triggered. The webhook, built and hosted on [Standard Library](stdlib.com), will first make a request to [crawler.api](https://stdlib.com/@crawler/lib/query), which will return a JSON payload with results from the query. 
+
+Our webhook will then create Slack messages for each event and post those to the channel where the command was invoked.
+
 ``` javascript 
 const lib = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
 /**
@@ -156,7 +160,78 @@ To deploy your API to the cloud select **Deploy API** in the bottom-left of the 
 <img src= "./images/deploy.png" width="400">
 
 # Test Your Workflow 
+
+You’re all done. Try it out! Your Slack App is now available for use in the Slack workspace you authorized it for. Your Slack app should respond to a `/cmd scrape <url> <selector>` as I show in the screenshot:
+
+<img src= "./images/SlackAppCrawlerSample.png" width="450">
+
+I've included an additional command that lists a few websites and their selectors to retrieve links. 
+
+Just type `/cmd list` and you should see your app respond with the following message: 
+
+<img src= "./images/list.png" width="450">
+
 # Making Changes
+
+Now that your app is live, you can return and add additional logic and scrape other attributes with [crawler.api](https://stdlib.com/@crawler/lib/query) 
   
+# Making Changes
+
+There are two ways to modify your application. The first is via our in-browser
+editor, [Autocode](https://autocode.com/). The second is
+via the [Standard Library CLI](https://github.com/stdlib/lib).
+
+## via Web Browser
+
+Simply visit [`Autocode.com`](https://autocode.com) and select your project. 
+You can easily make updates and changes this way, and deploy directly from your browser.
+
+## via Command Line
+
+You can install the CLI tools from [stdlib/lib](https://github.com/stdlib/lib) to test,
+makes changes, and deploy.
+
+
+To retrieve your package via `lib get`...
+
+```shell
+lib get <username>/<project-name>@dev
+```
+
+```shell
+# Deploy to dev environment
+lib up dev
+```
+
+# Shipping to Production
+
+Standard Library has easy dev / prod environment management, if you'd like to ship to production,
+visit [`build.stdlib.com/projects`](https://build.stdlib.com/projects),
+find your project and select it.
+
+From the environment management screen, simply click **Ship Release**.
+
+<img src="https://cdn-images-1.medium.com/max/1440/1*JqiwC6a_zbIdTsww1BOYLQ.png" width="400">
+
+Link any necessary resources, specify the version of the release and click **Create Release** to proceed. 
+
+That's all you need to do!
+
 # Support
+
+Via Slack: [`libdev.slack.com`](https://libdev.slack.com/)
+
+You can request an invitation by clicking `Community > Slack` in the top bar
+on [`https://stdlib.com`](https://stdlib.com).
+
+Via Twitter: [@SandardLibrary(https://twitter.com/StandardLibrary)
+
+Via E-mail: [support@stdlib.com](mailto:support@stdlib.com)
+
 # Acknowledgements
+
+Thanks to the Standard Library team and community for all the support!
+
+Keep up to date with platform changes on our [Blog](https://stdlib.com/blog).
+
+Happy hacking!
