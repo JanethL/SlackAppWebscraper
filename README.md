@@ -183,7 +183,7 @@ via the [Standard Library CLI](https://github.com/stdlib/lib).
 ## via Web Browser
 
 Simply visit [`Autocode.com`](https://autocode.com) and select your project. 
-You can easily make updates and changes this way, and deploy directly from your browser.
+You can easily make updates and changes this way, save your changes and deploy directly from your browser.
 
 ## via Command Line
 
@@ -205,12 +205,14 @@ lib up dev
 # Shipping to Production
 
 Standard Library has easy dev / prod environment management, if you'd like to ship to production,
-visit [`build.stdlib.com/projects`](https://build.stdlib.com/projects),
-find your project and select it.
+visit [`build.stdlib.com`](https://build.stdlib.com),
+find your project and select `manage`.
+
+<img src="./images/edit.png" width="400">
 
 From the environment management screen, simply click **Ship Release**.
 
-<img src=" " width="400">
+<img src="./images/release.png" width="400">
 
 Link any necessary resources, specify the version of the release and click **Create Release** to proceed. 
 
@@ -223,7 +225,7 @@ Via Slack: [`libdev.slack.com`](https://libdev.slack.com/)
 You can request an invitation by clicking `Community > Slack` in the top bar
 on [`https://stdlib.com`](https://stdlib.com).
 
-Via Twitter: [@SandardLibrary(https://twitter.com/StandardLibrary)
+Via Twitter: [@SandardLibrary](https://twitter.com/StandardLibrary)
 
 Via E-mail: [support@stdlib.com](mailto:support@stdlib.com)
 
