@@ -120,6 +120,7 @@ Click this deploy from Autocode button to quickly set up your project on Autocod
 You will be prompted to sign in or create a **FREE** account. If you have a Standard Library account click **Already Registered** and sign in using your Standard Library credentials.
 
 Give your project a unique name and select **Start API Project from Github** 
+
 <img src= "./images/Name.png" width="400">
 
 Autocode automatically sets up a project scaffold to save your project as an API endpoint, but it hasn’t been deployed.
