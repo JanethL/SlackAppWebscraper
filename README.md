@@ -1,7 +1,7 @@
 # README
 [<img src="https://deploy.stdlib.com/static/images/deploy.svg?" width="192">](https://deploy.stdlib.com/)
 
-# Slack app Website Scraper 
+# Slack App Website Scraper 
 
 In the [last tutorial](https://github.com/JanethL/WebScraper), we learned how to use [crawler.api](https://stdlib.com/@crawler/lib/query) on Standard Library to scrape websites using CSS selectors and as an example, we scraped the front page of [The Economist](https://www.economist.com/) for titles and their respective URLs. 
 
